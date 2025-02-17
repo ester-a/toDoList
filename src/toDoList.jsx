@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFloppyDisk, faPen, faTrash } from '@fortawesome/free-solid-svg-icons';
+
 
 // set the date component
 function DateComponent() {
@@ -60,7 +63,7 @@ function EditInput({
         onKeyDown={handleKeyDown} 
       />
       <span className="icon edit-icon" onClick={() => saveTask(index)}>
-        <i className="fa-solid fa-floppy-disk"></i>
+         <FontAwesomeIcon icon={faFloppyDisk} />
       </span>
     </>
   );
@@ -81,10 +84,10 @@ function RegularView({ index, setEditIndex, setEditInput, task, setTasks }) {
       {task} {/* Render the specific task */}
       <div className="icons">
         <span className="icon edit-icon" onClick={() => editTask(index)}>
-          <i className="fa-solid fa-pen"></i>
+          <FontAwesomeIcon icon={faPen} />
         </span>
         <span className="icon edit-icon" onClick={() => deleteTask(index)}>
-          <i className="fa-solid fa-trash"></i>
+          <FontAwesomeIcon icon={faTrash} />
         </span>
       </div>
     </>
